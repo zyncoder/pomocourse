@@ -1,0 +1,5 @@
+{
+  "name": "Pomodoro Course Completion Scheduler",
+  "description": "A Progressive Web App that schedules and delivers Pomodoro notifications to complete 64 hours of course video between 2025-11-06 and 2026-01-01 with gamification features.",
+  "requestFramePermissions": []
+}
