@@ -1,7 +1,10 @@
-
 import React from 'react';
 import { ScheduleEntry } from '../types';
-import { format, startOfMonth, endOfMonth, startOfWeek, endOfWeek, eachDayOfInterval, getDay, isSameMonth, isToday, parseISO } from 'date-fns';
+// FIX: The root 'date-fns' package in this environment doesn't export 'startOfMonth', 'startOfWeek', or 'parseISO'. Importing from submodules.
+import { format, endOfMonth, endOfWeek, eachDayOfInterval, getDay, isSameMonth, isToday } from 'date-fns';
+import startOfMonth from 'date-fns/startOfMonth';
+import startOfWeek from 'date-fns/startOfWeek';
+import parseISO from 'date-fns/parseISO';
 
 interface CalendarViewProps {
   schedule: ScheduleEntry[];

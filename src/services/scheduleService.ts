@@ -1,6 +1,8 @@
 import { ScheduleEntry } from '../types';
 import { COURSE_START_DATE, COURSE_END_DATE, TOTAL_COURSE_HOURS, WEEKLY_FOCUS } from '../constants';
-import { differenceInDays, addDays, format, max, parseISO } from 'date-fns';
+// FIX: The root 'date-fns' package in this environment doesn't seem to export 'parseISO' correctly. Importing from the submodule instead.
+import { differenceInDays, addDays, format, max } from 'date-fns';
+import parseISO from 'date-fns/parseISO';
 
 const toYYYYMMDD = (date: Date): string => format(date, 'yyyy-MM-dd');
 
