@@ -81,7 +81,6 @@ export const usePomodoro = (settings: Settings, onSessionComplete: (minutes: num
     }
   }, [settings, isActive, phase, phaseDurations]);
   
-  // FIX: Corrected the syntax of the 'start' function. The body was outside the curly braces.
   const start = () => {
     requestNotificationPermission();
     setIsActive(true);
