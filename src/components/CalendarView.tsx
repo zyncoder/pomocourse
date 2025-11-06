@@ -1,6 +1,6 @@
 import React from 'react';
 import { ScheduleEntry } from '../types';
-import { format, startOfMonth, endOfMonth, startOfWeek, endOfWeek, eachDayOfInterval, getDay, isSameMonth, isToday, parseISO } from 'date-fns';
+import { format, startOfMonth, endOfMonth, startOfWeek, endOfWeek, eachDayOfInterval, isSameMonth, isToday } from 'date-fns';
 
 interface CalendarViewProps {
   schedule: ScheduleEntry[];
@@ -39,7 +39,7 @@ const CalendarView: React.FC<CalendarViewProps> = ({ schedule }) => {
                 const dateStr = format(day, 'yyyy-MM-dd');
                 const entry = scheduleMap.get(dateStr);
                 const isCurrentMonth = isSameMonth(day, firstDayOfMonth);
-                const progress = entry ? (entry.completedMinutes / entry.plannedMinutes) * 100 : 0;
+                const progress = entry && entry.plannedMinutes > 0 ? (entry.completedMinutes / entry.plannedMinutes) * 100 : 0;
                 
                 return (
                 <div 

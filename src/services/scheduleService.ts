@@ -61,7 +61,7 @@ export const generateSchedule = (existingSchedule: ScheduleEntry[], completedMin
     const minuteDiscrepancy = totalMinutesToSchedule - totalPlannedMinutes;
     if (minuteDiscrepancy !== 0 && scheduleMap.size > 0) {
         const adjustmentPerDay = minuteDiscrepancy / scheduleMap.size;
-        for (const [dateStr, data] of scheduleMap.entries()) {
+        for (const [, data] of scheduleMap.entries()) {
             data.plannedMinutes += adjustmentPerDay;
         }
     }

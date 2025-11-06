@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useLocalStorage } from './useLocalStorage';
-import { AppState, ScheduleEntry, Settings, Gamification, Badge } from '../types';
+import { AppState, Settings, Gamification, Badge } from '../types';
 import { generateSchedule } from '../services/scheduleService';
 import { DEFAULT_SETTINGS, POINTS_PER_POMODORO, DAILY_TARGET_BONUS, INITIAL_BADGES, POINTS_PER_LEVEL } from '../constants';
 import { format } from 'date-fns';

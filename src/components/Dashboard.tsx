@@ -2,7 +2,6 @@ import React from 'react';
 import { ScheduleEntry, Gamification, Settings } from '../types';
 import Timer from './Timer';
 import { ProgressIcon, StreakIcon, PointsIcon } from './Icons';
-import { TOTAL_COURSE_HOURS } from '../constants';
 
 interface DashboardProps {
   todayEntry: ScheduleEntry | undefined;

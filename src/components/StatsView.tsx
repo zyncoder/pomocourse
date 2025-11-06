@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScheduleEntry, Gamification, Badge } from '../types';
+import { ScheduleEntry, Gamification } from '../types';
 import { TOTAL_COURSE_HOURS, POINTS_PER_LEVEL } from '../constants';
 import { BadgeIcon } from './Icons';
 
@@ -11,7 +11,7 @@ interface StatsViewProps {
 const StatsView: React.FC<StatsViewProps> = ({ schedule, gamification }) => {
   const totalCompletedMinutes = schedule.reduce((sum, day) => sum + day.completedMinutes, 0);
   const totalCourseMinutes = TOTAL_COURSE_HOURS * 60;
-  const courseCompletionPercent = Math.round((totalCompletedMinutes / totalCourseMinutes) * 100);
+  const courseCompletionPercent = totalCourseMinutes > 0 ? Math.round((totalCompletedMinutes / totalCourseMinutes) * 100) : 0;
   
   const levelProgress = ((gamification.points % POINTS_PER_LEVEL) / POINTS_PER_LEVEL) * 100;
 
